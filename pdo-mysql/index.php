@@ -14,3 +14,7 @@ foreach($selectAllQuery as $row)
 {
     print_r($row['todo'] . PHP_EOL);
 }
+
+// Close the connection
+$selectAllQuery = null;
+$connection = null;
