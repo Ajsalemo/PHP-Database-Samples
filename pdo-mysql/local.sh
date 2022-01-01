@@ -1,0 +1,4 @@
+DATABASE_NAME=pluralsightphp
+DATABASE_HOST=ansalemo-wordpress-linux-mysqldbserver.mysql.database.azure.com
+DATABASE_USER=mysqldbuser@ansalemo-wordpress-linux-mysqldbserver
+DATABASE_PASSWORD=Dudebug1992
