@@ -1,6 +1,6 @@
 <?php
 
-$dbName = getenv('DATABASE_NAME');
-$dbHost = getenv('DATABASE_HOST');
-$dbUser = getenv('DATABASE_USER');
-$dbPassword = getenv('DATABASE_PASSWORD');
+$dbName = getenv('POSTGRES_DATABASE_NAME');
+$dbHost = getenv('POSTGRES_DATABASE_HOST');
+$dbUser = getenv('POSTGRES_DATABASE_USER');
+$dbPassword = getenv('POSTGRES_DATABASE_PASSWORD');
