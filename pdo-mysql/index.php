@@ -7,9 +7,12 @@ $connection = new PDO("mysql:host=$dbHost; dbname=$dbName", $dbUser, $dbPassword
 $todo = new Todo();
 
 $todo->connect($connection);
-$todo->createQueryMethod();
+# $todo->createQueryMethod();
 $todo->selectAllQueryMethod();
-$todo->deleteQueryMethod();
+#$todo->deleteQueryMethod();
+$todo->updateQueryMethod();
+$todo->selectAllQueryMethod();
+
 
 // Close the connection
 $connection = null;

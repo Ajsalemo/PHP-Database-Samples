@@ -7,6 +7,7 @@ class Todo
     // Using a prepared statement to avoid SQL injection
     protected $createQuery = "INSERT INTO pluralsighttodos (todo, completed) VALUES (:todo, :completed)";
     protected $deleteQuery = "DELETE FROM pluralsighttodos WHERE id = (:id)";
+    protected $updateQuery = "UPDATE pluralsighttodos SET todo = (:todo) WHERE id = (:id)";
 
     public function connect($connection)
     {
@@ -22,7 +23,7 @@ class Todo
         // Print out the result
         foreach ($selectAllQuery as $row) {
             // Concat the output show as <id> <todo>
-            print_r($row['id'] . " " . $row['todo'] . PHP_EOL);
+            print_r("ID: " . $row['id'] . " - Todo: " . $row['todo'] . " - " . "Completed: " . $row["completed"] . PHP_EOL);
         }
         // Close the connection after running the operation
         $selectAllQuery = null;
@@ -48,6 +49,7 @@ class Todo
     // Delete a record from the table
     public function deleteQueryMethod()
     {
+        // This can be any arbitrary ID
         $idToDelete = 1;
         $delete = $this->connection->prepare($this->deleteQuery);
         // Bind the parameters for the values we want to delete
@@ -56,5 +58,21 @@ class Todo
         $delete->execute();
         // Close the connection after running the operation
         $delete = null;
+    }
+
+    // Update a record from the table
+    public function updateQueryMethod()
+    {
+        // This can be any arbitrary ID
+        $idToUpdate = 3;
+        $updateTodo = "wash the floors";
+        $update = $this->connection->prepare($this->updateQuery);
+        // Bind the parameters for the values we want to update
+        $update->bindParam(":id", $idToUpdate);
+        $update->bindParam(":todo", $updateTodo);
+        // Execute the update query
+        $update->execute();
+        // Close the connection after running the operation
+        $update = null;        
     }
 }
