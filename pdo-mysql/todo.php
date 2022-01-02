@@ -65,7 +65,7 @@ class Todo
     {
         // This can be any arbitrary ID
         $idToUpdate = 3;
-        $updateTodo = "wash the floors";
+        $updateTodo = "wash the car";
         $update = $this->connection->prepare($this->updateQuery);
         // Bind the parameters for the values we want to update
         $update->bindParam(":id", $idToUpdate);
