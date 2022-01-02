@@ -9,6 +9,7 @@ $todo = new Todo();
 $todo->connect($connection);
 $todo->createQueryMethod();
 $todo->selectAllQueryMethod();
+$todo->deleteQueryMethod();
 
 // Close the connection
 $connection = null;

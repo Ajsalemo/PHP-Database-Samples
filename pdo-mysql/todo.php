@@ -6,6 +6,7 @@ class Todo
     protected $selectAll = "SELECT * FROM pluralsighttodos";
     // Using a prepared statement to avoid SQL injection
     protected $createQuery = "INSERT INTO pluralsighttodos (todo, completed) VALUES (:todo, :completed)";
+    protected $deleteQuery = "DELETE FROM pluralsighttodos WHERE id = (:id)";
 
     public function connect($connection)
     {
@@ -20,7 +21,8 @@ class Todo
 
         // Print out the result
         foreach ($selectAllQuery as $row) {
-            print_r($row['todo'] . PHP_EOL);
+            // Concat the output show as <id> <todo>
+            print_r($row['id'] . " " . $row['todo'] . PHP_EOL);
         }
         // Close the connection after running the operation
         $selectAllQuery = null;
@@ -41,5 +43,18 @@ class Todo
         $create->execute();
         // Close the connection after running the operation
         $create = null;
+    }
+
+    // Delete a record from the table
+    public function deleteQueryMethod()
+    {
+        $idToDelete = 1;
+        $delete = $this->connection->prepare($this->deleteQuery);
+        // Bind the parameters for the values we want to delete
+        $delete->bindParam(":id", $idToDelete);
+        // Execute the delete query
+        $delete->execute();
+        // Close the connection after running the operation
+        $delete = null;
     }
 }
