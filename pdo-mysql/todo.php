@@ -3,11 +3,11 @@
 class Todo
 {
     protected $connection;
-    protected $selectAll = "SELECT * FROM pluralsighttodos";
+    protected $selectAll = "SELECT * FROM todos";
     // Using a prepared statement to avoid SQL injection
-    protected $createQuery = "INSERT INTO pluralsighttodos (todo, completed) VALUES (:todo, :completed)";
-    protected $deleteQuery = "DELETE FROM pluralsighttodos WHERE id = (:id)";
-    protected $updateQuery = "UPDATE pluralsighttodos SET todo = (:todo) WHERE id = (:id)";
+    protected $createQuery = "INSERT INTO todos (todo, completed) VALUES (:todo, :completed)";
+    protected $deleteQuery = "DELETE FROM todos WHERE id = (:id)";
+    protected $updateQuery = "UPDATE todos SET todo = (:todo) WHERE id = (:id)";
 
     public function connect($connection)
     {
