@@ -1,10 +1,19 @@
 # PHP-Database-Samples
 
-This repo contains various database samples with PHP using [PDO](https://www.php.net/manual/en/pdo.drivers.php). The PDO drivers used in this sample are:
-- `pdo-mariadb` - [MariaDB's PDO driver](https://www.php.net/manual/en/ref.pdo-mysql.php)
-- `pdo-mssql` - [MSSQL's PDO driver](https://www.php.net/manual/en/ref.pdo-sqlsrv.php)
-- `pdo-mysql` - [MySQL's PDO driver](https://www.php.net/manual/en/ref.pdo-mysql.php)
-- `pdo-postgres` - [Postgres PDO driver](https://www.php.net/manual/en/ref.pdo-pgsql.php)
+This repo contains various database samples with PHP using [PDO](https://www.php.net/manual/en/pdo.drivers.php) and Database specific Drivers. The drivers used in this sample are:
+- `cosmosdb-mongo` 
+  - `cosmosdb-mongo-driver` - [MongoDB driver](https://docs.mongodb.com/drivers/php/)
+- `mariadb`
+  - `mariadb-pdo` - [MariaDB's PDO driver](https://www.php.net/manual/en/ref.pdo-mysql.php)
+- `mssql`
+  - `mssql-pdo` - [MSSQL's PDO driver](https://www.php.net/manual/en/ref.pdo-sqlsrv.php)
+  - `mssql-driver` - [MSSQL specific driver](https://www.php.net/manual/en/function.sqlsrv-connect.php)
+- `mysql` - 
+  - `mysql-pdo` - [MySQL's PDO driver](https://www.php.net/manual/en/ref.pdo-mysql.php)
+  - `mysql-driver` - [MySQL specific driver](https://www.php.net/manual/en/mysqli.real-connect.php)
+- `postgres` -
+  - `postgres-pdo` - [Postgres PDO driver](https://www.php.net/manual/en/ref.pdo-pgsql.php)
+  - `postgres-driver` - [Postgres specific driver](https://www.php.net/manual/en/function.pg-connect.php)
 
 Each sample can be deployed to an Azure PHP App Service and tested with either Azure Database for MariaDB/Postgres/MySQL Instances or Azure SQL Server.
 
