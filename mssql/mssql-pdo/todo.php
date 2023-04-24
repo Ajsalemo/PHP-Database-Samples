@@ -34,7 +34,7 @@ class Todo
     {
         // Set the data we want to add as variables
         $createTodo = "unpack the house";
-        $createCompleted = false;
+        $createCompleted = 0;
         // Prepare the statement
         $create = $this->connection->prepare($this->createQuery);
         // Bind the parameters for the values we want to add
